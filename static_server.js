@@ -18,10 +18,8 @@ app.all('*', function (req, res, next) {
 
 app.use('/static', express.static('static'))
 
-app.post('/api/git_hook', (req, res) => {
-    hooks()
-    res.sendStatus(code)
-})
+// git hooks: 监听push事件
+app.post('/api/git_hook', () => hooks())
 
 app.use('/', (req, res) => res.send({ 
     msg: '我是来自8000上的数据'
