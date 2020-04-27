@@ -18,10 +18,9 @@ app.all('*', function (req, res, next) {
 
 app.use('/static', express.static('static'))
 
-app.post('/api/git_hook', async (req, res) => {
-    console.log('666')
-    const code = await hooks()
-    res.send(code)
+app.post('/api/git_hook', (req, res) => {
+    hooks()
+    res.sendStatus(code)
 })
 
 app.use('/', (req, res) => res.send({ 
