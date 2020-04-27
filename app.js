@@ -3,7 +3,7 @@ const path = require('path')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 const app = express()
 const port = 80
-console.log(123)
+console.log(1234)
 app.use('/', express.static(path.resolve(__dirname, '../default-vita/build')))
 
 app.use('/api', createProxyMiddleware({
